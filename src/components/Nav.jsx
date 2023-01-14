@@ -1,40 +1,53 @@
 import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
 
 const LINKS = [
   {
     label: "Home",
-    link: "/home",
+    link: "/",
+    isPage: true,
   },
   {
     label: "About",
-    link: "/about",
+    link: "about",
+    isPage: false,
   },
   {
     label: "Menu",
-    link: "/menu",
+    link: "menu",
+    isPage: false,
   },
   {
     label: "Reservations",
-    link: "/reservations",
+    link: "/booking",
+    isPage: true,
   },
   {
     label: "Order Online",
-    link: "/order-online",
+    link: "order-online",
+    isPage: false,
   },
   {
     label: "Login",
-    link: "/login",
+    link: "login",
+    isPage: false,
   },
 ];
 
 const Nav = () => {
   return (
     <nav>
-      <ul>
+      <ul className="flex gap-4">
         {LINKS.map((link) => (
-          <li>
-            <a href={link.link}>{link.label}</a>
-          </li>
+          <>
+            {!link.isPage ? (
+              <li>
+                <a href={`#${link.link}`}>{link.label}</a>
+              </li>
+            ) : (
+              <Link to={link.link}>{link.label}</Link>
+            )}
+          </>
         ))}
       </ul>
     </nav>
