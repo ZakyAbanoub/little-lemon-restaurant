@@ -7,7 +7,7 @@ const CallToAction = () => {
         <div className="hero_text">
           <h1 className="text-4xl text-primary_2 mb-2">Little Lemon</h1>
           <h3 className="text-xl mb-4">Chicago</h3>
-          <p className="sm:w-3/4 md:w-[500px]">
+          <p className="sm:w-3/4 lg:w-[500px]">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
             beatae asperiores laudantium, laborum deserunt fuga quaerat qui
             recusandae consectetur dolorum ad voluptatum ullam autem tempore

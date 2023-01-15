@@ -1,10 +1,10 @@
 import React from "react";
-import CallToAction from "./CallToAction";
+import Homepage from "./Homepage";
 
 const Main = () => {
   return (
     <main>
-      <CallToAction />
+      <Homepage />
     </main>
   );
 };
