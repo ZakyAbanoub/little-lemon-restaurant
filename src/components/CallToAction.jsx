@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import HeroImage from "../assets/hero-image.jpg";
 
 const CallToAction = () => {
   return (
-    <div className="bg-primary_1 text-white py-5 h-[400px] relative">
-      <div className="flex justify-between container mx-auto">
+    <div className="bg-primary_1 text-white py-5 md:h-[400px] relative">
+      <div className="md:flex justify-between container mx-auto">
         <div className="hero_text">
           <h1 className="text-4xl text-primary_2 mb-2">Little Lemon</h1>
           <h3 className="text-xl mb-4">Chicago</h3>
@@ -13,12 +14,15 @@ const CallToAction = () => {
             recusandae consectetur dolorum ad voluptatum ullam autem tempore
             nisi esse ab, excepturi cum?
           </p>
-          <button className="bg-primary_2 text-secondary_4 px-4 py-2 rounded-[25px] absolute bottom-5">
+          <Link
+            to="/booking"
+            className="bg-primary_2 text-secondary_4 px-4 py-2 rounded-[25px] md:absolute bottom-5 my-5 md:my-0"
+          >
             Reserve a Table
-          </button>
+          </Link>
         </div>
         <div className="hero_image">
-          <div className="img-container w-[375px] h-[430px] rounded-[12px] overflow-hidden">
+          <div className="img-container md:w-[375px] h-[430px] rounded-[12px] overflow-hidden">
             <img
               src={HeroImage}
               alt="hero-bruschetta"

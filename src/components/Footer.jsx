@@ -18,11 +18,6 @@ const NAVIGATION_LIST = [
     isPage: false,
   },
   {
-    title: "Menu",
-    link: "menu",
-    isPage: false,
-  },
-  {
     title: "Reservation",
     link: "/booking",
     isPage: true,
@@ -74,53 +69,45 @@ const SOCIAL_MEDIA_LIST = [
 const Footer = () => {
   return (
     <footer className="container mx-auto">
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 py-3">
         <div>
           <img src={Logo} alt="Little Lemon Logo" />
         </div>
         <div>
-          <h3 className="font-bold mb-5">Navigation</h3>
+          <h3 className="font-bold mb-2 md:mb-5">Navigation</h3>
           <ul>
             {NAVIGATION_LIST.map((link) => (
-              <>
+              <li key={link.title}>
                 {!link.isPage ? (
-                  <li>
-                    <a href={`#${link.link}`}>{link.title}</a>
-                  </li>
+                  <a href={`#${link.link}`}>{link.title}</a>
                 ) : (
                   <Link to={link.link}>{link.title}</Link>
                 )}
-              </>
+              </li>
             ))}
           </ul>
         </div>
         <div>
-          <h3 className="font-bold mb-5">Contact</h3>
+          <h3 className="font-bold mb-2 md:mb-5">Contact</h3>
           <ul>
             {CONTACT_LIST.map((link) => (
-              <>
+              <li key={link.title}>
                 {link.isLink ? (
-                  <li>
-                    <a href={link.link}>{link.title}</a>
-                  </li>
+                  <a href={link.link}>{link.title}</a>
                 ) : (
-                  <li>
-                    <p>{link.title}</p>
-                  </li>
+                  <p>{link.title}</p>
                 )}
-              </>
+              </li>
             ))}
           </ul>
         </div>
         <div>
-          <h3 className="font-bold mb-5">Social Media Links</h3>
+          <h3 className="font-bold mb-2 md:mb-5">Social Media Links</h3>
           <ul>
             {SOCIAL_MEDIA_LIST.map((link) => (
-              <>
-                <li>
-                  <a href={link.link}>{link.title}</a>
-                </li>
-              </>
+              <li key={link.title}>
+                <a href={link.link}>{link.title}</a>
+              </li>
             ))}
           </ul>
         </div>

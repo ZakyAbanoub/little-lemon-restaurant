@@ -1,11 +1,8 @@
-import React from "react";
-import Homepage from "./Homepage";
-
-const Main = () => {
+const Main = ({ children }) => {
   return (
-    <main>
-      <Homepage />
-    </main>
+    <>
+      <main className="flex-1">{children}</main>
+    </>
   );
 };
 

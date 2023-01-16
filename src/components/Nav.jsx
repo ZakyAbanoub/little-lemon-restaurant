@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import HamburgerMenu from "../assets/🦆 icon _hamburger menu.svg";
+import HamburgerMenu from "../assets/icon _hamburger menu.svg";
 import CloseIcon from "../assets/x-png.jpg";
 
 const LINKS = [
@@ -60,15 +60,13 @@ const Nav = () => {
     <nav>
       <ul className="hidden md:flex md:gap-4">
         {LINKS.map((link) => (
-          <>
+          <li key={link.label}>
             {!link.isPage ? (
-              <li>
-                <a href={`#${link.link}`}>{link.label}</a>
-              </li>
+              <a href={`#${link.link}`}>{link.label}</a>
             ) : (
               <Link to={link.link}>{link.label}</Link>
             )}
-          </>
+          </li>
         ))}
       </ul>
       <img
@@ -87,17 +85,15 @@ const Nav = () => {
           />
           <ul className="text-center top-[50%] -translate-y-1/2 relative flex flex-col gap-10 font-serif text-3xl">
             {LINKS.map((link) => (
-              <>
+              <li key={link.label} onClick={() => setShowLinks(false)}>
                 {!link.isPage ? (
-                  <li onClick={() => setShowLinks(false)}>
+                  <li key={link.label}>
                     <a href={`#${link.link}`}>{link.label}</a>
                   </li>
                 ) : (
-                  <li onClick={() => setShowLinks(false)}>
-                    <Link to={link.link}>{link.label}</Link>
-                  </li>
+                  <Link to={link.link}>{link.label}</Link>
                 )}
-              </>
+              </li>
             ))}
           </ul>
         </div>
