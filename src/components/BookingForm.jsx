@@ -17,7 +17,6 @@ const BookingForm = ({
         <input
           type="date"
           id="res-date"
-          data-testid="res-date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
         />
@@ -27,8 +26,12 @@ const BookingForm = ({
           value={time}
           onChange={(e) => setTime(e.target.value)}
         >
-          {availableTimes.map((time) => (
-            <option key={time.value} value={time.value}>
+          {availableTimes.map((time, i) => (
+            <option
+              data-testid={i === availableTimes.length - 1 ? "last-option" : ""}
+              key={time.value}
+              value={time.value}
+            >
               {time.label}
             </option>
           ))}

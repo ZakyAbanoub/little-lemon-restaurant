@@ -43,6 +43,8 @@ const MainLayout = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initializeTimes);
 
   const updateTimes = useCallback(() => {
+    //Example to change times when add date after 7 day
+    console.log(date);
     console.log(new Date(date).getTime() < 1674424800000);
     if (new Date(date).getTime() < 1674424800000) {
       dispatch({ type: "some-dates" });
