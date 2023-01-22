@@ -17,6 +17,7 @@ const MainLayout = ({ children }) => {
   const [date, setDate] = useState(new Date().toJSON().slice(0, 10));
   const [time, setTime] = useState(17);
   const [guestsNumber, setGuestsNumber] = useState(1);
+  const [disabled, setDisabled] = useState(true);
   const [occasion, setOccasion] = useState("Birthday");
   const initializeTimes = [
     { label: "17:00", value: "17" },
@@ -40,6 +41,24 @@ const MainLayout = ({ children }) => {
     });
     // window["fetchAPI"](date);
   }, [date]);
+
+  useEffect(() => {
+    console.log(date, guestsNumber);
+    console.log(new Date(date).getTime());
+    if (
+      isNaN(new Date(date).getTime()) ||
+      guestsNumber < 1 ||
+      guestsNumber > 10
+    ) {
+      setDisabled(true);
+    } else {
+      setDisabled(false);
+    }
+  }, [date, guestsNumber]);
+
+  useEffect(() => {
+    console.log(disabled);
+  }, [disabled]);
 
   const submitForm = (event, formData) => {
     console.log(event, formData);
@@ -70,6 +89,7 @@ const MainLayout = ({ children }) => {
           occasion,
           setOccasion,
           submitForm,
+          disabled,
         })}
       </Main>
       <Footer />
