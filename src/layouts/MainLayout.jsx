@@ -6,7 +6,6 @@ import Footer from "../components/Footer";
 import Main from "../components/Main";
 
 const reducer = (state, action) => {
-  // console.log(action);
   if (action.type === "change-dates") {
     return (state = action.payload);
   }
@@ -43,8 +42,6 @@ const MainLayout = ({ children }) => {
   }, [date]);
 
   useEffect(() => {
-    console.log(date, guestsNumber);
-    console.log(new Date(date).getTime());
     if (
       isNaN(new Date(date).getTime()) ||
       guestsNumber < 1 ||
@@ -56,15 +53,9 @@ const MainLayout = ({ children }) => {
     }
   }, [date, guestsNumber]);
 
-  useEffect(() => {
-    console.log(disabled);
-  }, [disabled]);
-
   const submitForm = (event, formData) => {
-    console.log(event, formData);
     event.preventDefault();
     const confirmed = submitAPI(formData);
-    console.log(confirmed);
     if (confirmed) {
       navigate("/booking-confirmed");
     }
