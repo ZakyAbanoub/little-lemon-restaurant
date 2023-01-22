@@ -3,7 +3,7 @@ import DeliveryIcon from "../assets/delivery-icon.png";
 
 const SpeicalCard = () => {
   return (
-    <>
+    <div>
       <div className="img-container">
         <img
           src={GreekSalad}
@@ -28,7 +28,7 @@ const SpeicalCard = () => {
           </div>
         </p>
       </div>
-    </>
+    </div>
   );
 };
 
