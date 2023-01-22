@@ -1,5 +1,6 @@
 import { render, fireEvent, screen } from "@testing-library/react";
 import BookingForm from "./BookingForm";
+import { fetchAPI } from "../layouts/script";
 
 test("validate initializeTimes to returns the correct expected value", () => {
   render(

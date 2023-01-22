@@ -8,11 +8,12 @@ const BookingForm = ({
   setGuestsNumber,
   occasion,
   setOccasion,
+  submitForm,
 }) => {
   return (
     <>
       <h2>Book Now</h2>
-      <form>
+      <form onSubmit={(e) => submitForm(e, date)}>
         <label htmlFor="res-date">Choose date</label>
         <input
           type="date"

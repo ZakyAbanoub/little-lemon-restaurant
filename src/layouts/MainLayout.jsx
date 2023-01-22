@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useReducer, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { fetchAPI, submitAPI } from "./script";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -12,6 +13,7 @@ const reducer = (state, action) => {
 };
 
 const MainLayout = ({ children }) => {
+  const navigate = useNavigate();
   const [date, setDate] = useState(new Date().toJSON().slice(0, 10));
   const [time, setTime] = useState(17);
   const [guestsNumber, setGuestsNumber] = useState(1);
@@ -28,16 +30,6 @@ const MainLayout = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initializeTimes);
 
   const updateTimes = useCallback(() => {
-    //Example to change times when add date after 7 day
-
-    // console.log(date);
-    // console.log(new Date(date).getTime() < 1674424800000);
-    // if (new Date(date).getTime() < 1674424800000) {
-    //   dispatch({ type: "some-dates" });
-    // } else {
-    //   dispatch({ type: "all-dates" });
-    // }
-    // console.log(fetchAPI(date));
     const datesArray = fetchAPI(new Date(date));
     dispatch({
       type: "change-dates",
@@ -46,10 +38,18 @@ const MainLayout = ({ children }) => {
         value: date,
       })),
     });
-    console.log(state);
-
     // window["fetchAPI"](date);
   }, [date]);
+
+  const submitForm = (event, formData) => {
+    console.log(event, formData);
+    event.preventDefault();
+    const confirmed = submitAPI(formData);
+    console.log(confirmed);
+    if (confirmed) {
+      navigate("/booking-confirmed");
+    }
+  };
 
   useEffect(() => {
     updateTimes();
@@ -69,6 +69,7 @@ const MainLayout = ({ children }) => {
           setGuestsNumber,
           occasion,
           setOccasion,
+          submitForm,
         })}
       </Main>
       <Footer />
