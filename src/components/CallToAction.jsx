@@ -8,7 +8,7 @@ const CallToAction = () => {
         <div className="hero_text">
           <h1 className="text-4xl text-primary_2 mb-2">Little Lemon</h1>
           <h3 className="text-xl mb-4">Chicago</h3>
-          <p className="sm:w-3/4 lg:w-[500px]">
+          <p className="sm:w-3/4 lg:w-[500px] mb-10">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
             beatae asperiores laudantium, laborum deserunt fuga quaerat qui
             recusandae consectetur dolorum ad voluptatum ullam autem tempore
@@ -16,13 +16,13 @@ const CallToAction = () => {
           </p>
           <Link
             to="/booking"
-            className="bg-primary_2 text-secondary_4 px-4 py-2 rounded-[25px] md:absolute bottom-5 my-5 md:my-0"
+            className="bg-primary_2 text-secondary_4 px-4 py-2 rounded-[25px] md:absolute md:bottom-5 my-5"
           >
             Reserve a Table
           </Link>
         </div>
         <div className="hero_image">
-          <div className="img-container md:w-[375px] h-[430px] rounded-[12px] overflow-hidden">
+          <div className="img-container md:w-[375px] h-[430px] rounded-[12px] overflow-hidden mt-10">
             <img
               src={HeroImage}
               alt="hero-bruschetta"
