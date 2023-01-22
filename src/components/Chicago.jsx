@@ -2,7 +2,7 @@ import ChicagoFirst from "../assets/chicago-first.jpg";
 import ChicagoSecond from "../assets/chicago-second.jpg";
 const Chicago = () => {
   return (
-    <div className="container mx-auto my-20">
+    <section className="container mx-auto my-20">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:h-[400px]">
         <div className="hero_text">
           <h1 className="text-4xl text-primary_2 mb-2">Little Lemon</h1>
@@ -29,7 +29,7 @@ const Chicago = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

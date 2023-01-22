@@ -73,3 +73,9 @@ test("validate initializeTimes updateTimes to change the initial available times
   const lastOption = screen.getByTestId("last-option");
   expect(lastOption).toHaveTextContent("23:00");
 });
+
+test("Submission is disabled if date is not valid", () => {
+  render(<BookingForm date={new Date("02/02/2025")} disabled={true} />);
+  const submitButton = screen.getByTestId("submit-button");
+  expect(submitButton).toHaveAttribute("disabled");
+});

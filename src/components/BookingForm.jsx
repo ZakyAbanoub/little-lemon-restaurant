@@ -79,6 +79,7 @@ const BookingForm = ({
           </select>
         </div>
         <input
+          data-testid="submit-button"
           required
           type="submit"
           value="Make Your reservation"

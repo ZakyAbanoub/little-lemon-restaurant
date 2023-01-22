@@ -3,7 +3,7 @@ import HeroImage from "../assets/hero-image.jpg";
 
 const CallToAction = () => {
   return (
-    <div className="bg-primary_1 text-white py-5 md:h-[400px] relative">
+    <section className="bg-primary_1 text-white py-5 md:h-[400px] relative">
       <div className="md:flex justify-between container mx-auto">
         <div className="hero_text">
           <h1 className="text-4xl text-primary_2 mb-2">Little Lemon</h1>
@@ -31,7 +31,7 @@ const CallToAction = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
