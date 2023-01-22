@@ -79,6 +79,7 @@ const Nav = () => {
         <div className="fixed top-0 left-0 w-screen h-screen bg-primary_1/90 text-primary_2 z-40">
           <img
             src={CloseIcon}
+            aria-label="close"
             alt="close icon"
             className="w-[64px] absolute top-10 left-10"
             onClick={() => setShowLinks(false)}

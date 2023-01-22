@@ -15,6 +15,7 @@ const CallToAction = () => {
             nisi esse ab, excepturi cum?
           </p>
           <Link
+            role="button"
             to="/booking"
             className="bg-primary_2 text-secondary_4 px-4 py-2 rounded-[25px] md:absolute md:bottom-5 my-5"
           >

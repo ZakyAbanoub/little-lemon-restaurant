@@ -21,7 +21,10 @@ const SpeicalCard = () => {
           Chicago style feta cheese, garnished with crunchy garlic and rosemary
           croutons.
         </p>
-        <div className="font-bold flex justify-start items-center cursor-pointer">
+        <div
+          role="button"
+          className="font-bold flex justify-start items-center cursor-pointer"
+        >
           Order a delivery
           <div className="ml-2">
             <img src={DeliveryIcon} alt="delivery icon" />
